@@ -3,6 +3,7 @@ package edu.luc.cs271.arrayqueue;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class FixedArrayQueue<E> implements SimpleQueue<E> {
 
@@ -29,26 +30,50 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
 
   @Override
   public boolean offer(final E obj) {
-    // TODO
-    return false;
+    // TODO done
+    if (size==capacity){
+      System.out.println("Queue is at capacity, please try again later");
+      return false;
+    }
+    else{
+
+      rear = (rear + 1) % capacity;
+      data[rear] = obj;
+      return true;
+
+    }
   }
 
   @Override
   public E peek() {
-    // TODO
-    return null;
+    // TODO done
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    } else {
+      return data[front];
+    }
+    //return null;
   }
 
   @Override
   public E poll() {
-    // TODO
-    return null;
+    // TODO done
+    if (isEmpty()) {
+      throw new NoSuchElementException();
+    } else {
+      E result = data[front];
+      front = front+1;
+      return result;
+    }
+   // return null;
   }
 
   @Override
   public boolean isEmpty() {
-    // TODO
-    return true;
+    // TODO done
+    if(this.front==0){
+    return true;}
+    else return false;
   }
 
   @Override

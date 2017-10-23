@@ -49,7 +49,7 @@ public class SingleQueueService {
       final String name = input.nextLine();
       boolean result;
       synchronized (lock) {
-        result = false; // TODO try to add this name tothe queue
+        result = false; // TODO try to add this name to the queue
       }
       if (result) {
         System.out.println(name + " has joined the queue");
