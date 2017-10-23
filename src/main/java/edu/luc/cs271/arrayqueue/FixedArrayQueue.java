@@ -84,6 +84,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @Override
   public List<E> asList() {
     // TODO implement using an ArrayList preallocated with the right size
+    List<?> list = new ArrayList<>(5 );
     return Arrays.asList();
   }
 }
