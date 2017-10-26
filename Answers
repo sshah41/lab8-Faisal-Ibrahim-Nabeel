@@ -1,0 +1,9 @@
+ 1. Why does `FixedArrayQueue` require an explicit constructor?
+   - To make sure that the fixedarrayqueue uses the current values and not have them as
+     variables that can change, it also makes the functionality for the other functions easier.
+ 2. What happens when you offer an item to a full `FixedArrayQueue`?
+   - It will return with " Queue is at capacity, please try later."
+ 3. What happens when you poll an empty `FixedArrayQueue`?
+   - It will return null.
+ 4. What is the time and (extra) space complexity of each of the `FixedArrayQueue` methods?
+   - O(1).
