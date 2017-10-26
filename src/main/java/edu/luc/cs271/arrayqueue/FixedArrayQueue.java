@@ -48,7 +48,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public E peek() {
     // TODO done
     if (isEmpty()) {
-      throw new NoSuchElementException();
+      return null;
     } else {
       return data[front];
     }
@@ -59,7 +59,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   public E poll() {
     // TODO done
     if (isEmpty()) {
-      throw new NoSuchElementException();
+      return null;
     } else {
       E result = data[front];
       front = front+1;
@@ -84,7 +84,7 @@ public class FixedArrayQueue<E> implements SimpleQueue<E> {
   @Override
   public List<E> asList() {
     // TODO implement using an ArrayList preallocated with the right size
-    List<?> list = new ArrayList<>(5 );
+    List<E> list = new ArrayList<>(5 );
     return Arrays.asList();
   }
 }
